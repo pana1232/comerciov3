@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Master</title>
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <!-- ================================= -->
+    <!-- INICIO -->
+    <!-- ================================= -->
+
+    <section id="inicio" class="pantalla">
+
+        <div class="tarjeta inicio-card">
+
+            <h1>🎯 QUIZ MASTER</h1>
+
+            <p class="subtitulo">
+                Pon a prueba tus conocimientos
+            </p>
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Escribe tu nombre"
+                maxlength="20"
+            >
+
+            <h2>Selecciona un tema</h2>
+
+            <div class="temas">
+
+                <button
+                    class="tema informatica"
+                    onclick="elegirTema('informatica')">
+                    💻 Informática
+                </button>
+
+                <button
+                    class="tema ciencias"
+                    onclick="elegirTema('ciencias')">
+                    🔬 Ciencias
+                </button>
+
+                <button
+                    class="tema matematicas"
+                    onclick="elegirTema('matematicas')">
+                    🧮 Matemáticas
+                </button>
+
+                <button
+                    class="tema juegos"
+                    onclick="elegirTema('juegos')">
+                    🎮 Juegos
+                </button>
+
+                <button
+                    class="tema futbol"
+                    onclick="elegirTema('futbol')">
+                    ⚽ Fútbol
+                </button>
+
+                <button
+                    class="tema peliculas"
+                    onclick="elegirTema('peliculas')">
+                    🎬 Películas
+                </button>
+
+                <button
+                    class="tema freefire"
+                    onclick="elegirTema('freefire')">
+                    🔥 Free Fire
+                </button>
+
+                <button
+                    class="tema cultura"
+                    onclick="elegirTema('cultura')">
+                    🌎 Cultura General
+                </button>
+
+            </div>
+
+            <button
+                class="boton-ranking"
+                onclick="mostrarRanking()">
+                🏆 Ver TOP 10
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- JUEGO -->
+    <!-- ================================= -->
+
+    <section id="juego" class="pantalla oculto">
+
+        <div class="juego-contenedor">
+
+            <div class="barra-superior">
+
+                <div>
+                    👤
+                    <span id="jugador">Jugador</span>
+                </div>
+
+                <div>
+                    ⭐
+                    <span id="puntos">0</span>
+                    puntos
+                </div>
+
+            </div>
+
+
+            <div class="informacion">
+
+                <span id="numeroPregunta">
+                    Pregunta 1 de 10
+                </span>
+
+                <div class="temporizador">
+
+                    ⏱️
+                    <span id="contador">15</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="barra-tiempo">
+
+                <div id="barraTiempo"></div>
+
+            </div>
+
+
+            <div class="tarjeta pregunta-card">
+
+                <h2 id="pregunta">
+                    Pregunta
+                </h2>
+
+                <div id="respuestas" class="respuestas"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- RESULTADO FINAL -->
+    <!-- ================================= -->
+
+    <section id="resultado" class="pantalla oculto">
+
+        <div class="tarjeta resultado-card">
+
+            <h1 id="mensajeFinal">
+                🎉 ¡Juego terminado!
+            </h1>
+
+            <div class="datos-finales">
+
+                <div>
+                    <span>👤 Jugador</span>
+                    <strong id="nombreFinal">---</strong>
+                </div>
+
+                <div>
+                    <span>📚 Tema</span>
+                    <strong id="temaFinal">---</strong>
+                </div>
+
+                <div>
+                    <span>⭐ Puntos</span>
+                    <strong id="puntosFinales">0</strong>
+                </div>
+
+                <div>
+                    <span>🏆 Posición</span>
+                    <strong id="posicionFinal">-</strong>
+                </div>
+
+            </div>
+
+
+            <h2>🏆 TOP 10</h2>
+
+            <div class="tabla-contenedor">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>#</th>
+                            <th>Jugador</th>
+                            <th>Puntos</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tablaFinal"></tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="botones-final">
+
+                <button
+                    onclick="jugarOtraVez()">
+                    🔄 Jugar otra vez
+                </button>
+
+                <button
+                    onclick="volverInicio()">
+                    🏠 Volver al menú
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- RANKING -->
+    <!-- ================================= -->
+
+    <section id="ranking" class="pantalla oculto">
+
+        <div class="tarjeta ranking-card">
+
+            <h1>🏆 TOP 10 JUGADORES</h1>
+
+            <p>
+                Los mejores resultados quedan guardados.
+            </p>
+
+            <div class="tabla-contenedor">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>#</th>
+                            <th>Jugador</th>
+                            <th>Puntos</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tablaRanking"></tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="botones-ranking">
+
+                <button onclick="volverInicio()">
+                    🏠 Volver al menú
+                </button>
+
+                <button
+                    class="borrar"
+                    onclick="borrarRanking()">
+                    🗑️ Borrar ranking
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- SONIDOS -->
+    <!-- ================================= -->
+
+    <audio
+        id="sonidoCorrecto"
+        src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3">
+    </audio>
+
+    <audio
+        id="sonidoIncorrecto"
+        src="https://assets.mixkit.co/active_storage/sfx/2955/2955-preview.mp3">
+    </audio>
+
+    <audio
+        id="sonidoFinal"
+        src="https://assets.mixkit.co/active_storage/sfx/2018/2018-preview.mp3">
+    </audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

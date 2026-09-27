@@ -1,0 +1,668 @@
+/* ================================= */
+/* CONFIGURACIÓN GENERAL */
+/* ================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #46178f,
+            #170044
+        );
+
+    min-height: 100vh;
+
+    color: #222;
+}
+
+
+/* ================================= */
+/* PANTALLAS */
+/* ================================= */
+
+.pantalla {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+}
+
+.oculto {
+    display: none !important;
+}
+
+
+/* ================================= */
+/* TARJETAS */
+/* ================================= */
+
+.tarjeta {
+    background: white;
+
+    width: 100%;
+    max-width: 850px;
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+    text-align: center;
+}
+
+
+/* ================================= */
+/* INICIO */
+/* ================================= */
+
+.inicio-card {
+    max-width: 900px;
+}
+
+.inicio-card h1 {
+    font-size: 45px;
+
+    color: #46178f;
+
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    font-size: 20px;
+
+    color: #666;
+
+    margin-bottom: 25px;
+}
+
+
+#nombre {
+    width: 100%;
+
+    max-width: 450px;
+
+    padding: 15px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+
+    margin-bottom: 25px;
+
+    outline: none;
+}
+
+#nombre:focus {
+    border-color: #46178f;
+}
+
+
+/* ================================= */
+/* TEMAS */
+/* ================================= */
+
+.inicio-card h2 {
+    margin-bottom: 20px;
+}
+
+.temas {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.tema {
+
+    border: none;
+
+    padding: 22px 10px;
+
+    border-radius: 15px;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.tema:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 15px rgba(0,0,0,0.25);
+}
+
+
+/* Colores de temas */
+
+.informatica {
+    background: #1976d2;
+}
+
+.ciencias {
+    background: #16a085;
+}
+
+.matematicas {
+    background: #e67e22;
+}
+
+.juegos {
+    background: #e91e63;
+}
+
+.futbol {
+    background: #008f39;
+}
+
+.peliculas {
+    background: #8e44ad;
+}
+
+.freefire {
+    background: #ff5722;
+}
+
+.cultura {
+    background: #0097a7;
+}
+
+
+/* ================================= */
+/* BOTONES */
+/* ================================= */
+
+.boton-ranking {
+
+    border: none;
+
+    background: #46178f;
+
+    color: white;
+
+    padding: 15px 25px;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.boton-ranking:hover {
+    background: #321064;
+
+    transform: scale(1.04);
+}
+
+
+/* ================================= */
+/* JUEGO */
+/* ================================= */
+
+.juego-contenedor {
+
+    width: 100%;
+
+    max-width: 950px;
+}
+
+
+/* ================================= */
+/* BARRA SUPERIOR */
+/* ================================= */
+
+.barra-superior {
+
+    background: white;
+
+    padding: 18px 25px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.25);
+}
+
+
+/* ================================= */
+/* INFORMACIÓN */
+/* ================================= */
+
+.informacion {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.temporizador {
+
+    background: #ff4081;
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+}
+
+
+/* ================================= */
+/* BARRA DE TIEMPO */
+/* ================================= */
+
+.barra-tiempo {
+
+    width: 100%;
+
+    height: 12px;
+
+    background: rgba(255,255,255,0.3);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 15px;
+}
+
+#barraTiempo {
+
+    height: 100%;
+
+    width: 100%;
+
+    background: #ff4081;
+
+    transition: width 1s linear;
+}
+
+
+/* ================================= */
+/* PREGUNTA */
+/* ================================= */
+
+.pregunta-card {
+
+    max-width: 950px;
+}
+
+#pregunta {
+
+    font-size: 28px;
+
+    margin-bottom: 30px;
+
+    line-height: 1.4;
+}
+
+
+/* ================================= */
+/* RESPUESTAS */
+/* ================================= */
+
+.respuestas {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.respuestas button {
+
+    border: none;
+
+    padding: 22px;
+
+    border-radius: 15px;
+
+    background: #eee;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.respuestas button:hover {
+
+    transform: scale(1.03);
+
+    background: #ddd;
+}
+
+.respuestas button:disabled {
+    cursor: not-allowed;
+}
+
+
+/* Respuesta correcta */
+
+.respuestas button.correcta {
+
+    background: #2ecc71 !important;
+
+    color: white;
+
+    transform: scale(1.03);
+}
+
+
+/* Respuesta incorrecta */
+
+.respuestas button.incorrecta {
+
+    background: #e74c3c !important;
+
+    color: white;
+}
+
+
+/* ================================= */
+/* RESULTADO */
+/* ================================= */
+
+.resultado-card h1 {
+
+    color: #46178f;
+
+    margin-bottom: 30px;
+}
+
+.datos-finales {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.datos-finales div {
+
+    background: #f3f3f3;
+
+    padding: 18px;
+
+    border-radius: 15px;
+}
+
+.datos-finales span {
+
+    display: block;
+
+    color: #777;
+
+    margin-bottom: 8px;
+}
+
+.datos-finales strong {
+
+    font-size: 20px;
+}
+
+
+/* ================================= */
+/* TABLAS */
+/* ================================= */
+
+.tabla-contenedor {
+
+    overflow-x: auto;
+
+    margin: 20px 0;
+}
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+}
+
+th {
+
+    background: #46178f;
+
+    color: white;
+
+    padding: 15px;
+}
+
+td {
+
+    padding: 14px;
+
+    border-bottom: 1px solid #ddd;
+
+    font-size: 17px;
+}
+
+tr:nth-child(even) {
+
+    background: #f5f5f5;
+}
+
+
+/* ================================= */
+/* BOTONES FINALES */
+/* ================================= */
+
+.botones-final {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.botones-final button,
+.botones-ranking button {
+
+    border: none;
+
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    background: #46178f;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.botones-final button:hover,
+.botones-ranking button:hover {
+
+    transform: scale(1.04);
+
+    background: #321064;
+}
+
+
+/* ================================= */
+/* RANKING */
+/* ================================= */
+
+.ranking-card {
+
+    max-width: 800px;
+}
+
+.ranking-card h1 {
+
+    color: #46178f;
+
+    margin-bottom: 10px;
+}
+
+.ranking-card p {
+
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+.botones-ranking {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.botones-ranking .borrar {
+
+    background: #e74c3c;
+}
+
+.botones-ranking .borrar:hover {
+
+    background: #c0392b;
+}
+
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
+@media (max-width: 800px) {
+
+    .temas {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .datos-finales {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .pantalla {
+        padding: 15px;
+    }
+
+    .tarjeta {
+        padding: 22px;
+    }
+
+    .inicio-card h1 {
+        font-size: 32px;
+    }
+
+    .temas {
+
+        grid-template-columns: 1fr;
+    }
+
+    .respuestas {
+
+        grid-template-columns: 1fr;
+    }
+
+    #pregunta {
+
+        font-size: 22px;
+    }
+
+    .barra-superior {
+
+        font-size: 14px;
+
+        padding: 15px;
+    }
+
+    .informacion {
+
+        font-size: 15px;
+    }
+
+    .datos-finales {
+
+        grid-template-columns: 1fr;
+    }
+}
